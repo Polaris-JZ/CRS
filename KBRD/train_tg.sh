@@ -1,0 +1,1 @@
+python run_crslab.py --config config/crs/kgsf/tgredial.yaml --gpu 0 > train_tg.log 2>&1 &
