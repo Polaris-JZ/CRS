@@ -1,5 +1,6 @@
 # CRS
 This is the repository for the paper "Model Meets Knowledge: Analyzing Knowledge Types for Conversational Recommender Systems".
 
-We incorporate all the methods we evaluate in the paper into this repository.
+We incorporate all the methods we evaluate, unify the dataset and evaluation protocol in the paper into this repository.
+
 
