@@ -24,13 +24,11 @@ from engine import training_loop, validate
 import nltk
 import os
 
-# 设置NLTK数据路径
-nltk.data.path = ['/home/zhaoj9/nltk_data']
 
 
 parser = argparse.ArgumentParser()
 
-root = "/projects/0/prjs1158/KG/redail/efficient_unified_crs_place/" # todo: change to your home directory
+root = "./" # todo: change to your home directory
 
 # general
 parser.add_argument("--seed", type=int, default=42)

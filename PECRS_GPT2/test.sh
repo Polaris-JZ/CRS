@@ -13,5 +13,5 @@ conda activate torch2.1.1
 srun --gres=gpu:1 \
     python main.py \
     --mode=eval \
-    --load_model_path=/data/zhaoj9/KG_repro/PLM_based/redail/efficient_unified_crs/Outputs/REDIAL/temp/CRS_Train_best_model.pt \
+    --load_model_path=./Outputs/REDIAL/temp/CRS_Train_best_model.pt \
                               

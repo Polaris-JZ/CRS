@@ -4,10 +4,10 @@ import torch
 
 def load_movie_data():
     # 首先获取所有在对话中被提到的电影ID
-    train_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/train_data.json'
-    valid_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/valid_data.json'
-    test_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/test_data.json'
-    csv_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/movies_with_mentions.csv'
+    train_path = './DATA/nltk/train_data.json'
+    valid_path = './DATA/nltk/valid_data.json'
+    test_path = './DATA/nltk/test_data.json'
+    csv_path = './DATA/nltk/movies_with_mentions.csv'
     mentioned_ids = get_mentioned_movie_ids(train_path)
     mentioned_ids.update(get_mentioned_movie_ids(valid_path))
     mentioned_ids.update(get_mentioned_movie_ids(test_path))
@@ -92,18 +92,18 @@ def convert_json_to_redial_format(json_file, items_db):
 
 
 items_db, new_item_db = load_movie_data()
-train_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/train_data.json'
-valid_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/valid_data.json'
-test_path = '/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/nltk/test_data.json'
+train_path = './DATA/nltk/train_data.json'
+valid_path = './DATA/nltk/valid_data.json'
+test_path = './DATA/nltk/test_data.json'
 train_converted_data = convert_json_to_redial_format(train_path, items_db)
 valid_converted_data = convert_json_to_redial_format(valid_path, items_db)
 test_converted_data = convert_json_to_redial_format(test_path, items_db)
 
 # save to path
-train_path = "/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/train_data_processed"
-valid_path = "/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/valid_data_processed"
-test_path = "/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/test_data_processed"
-items_db_path = "/data/zhaoj9/KG_repro/PLM_based/redail/MESE/DATA/movie_db"
+train_path = "./DATA/train_data_processed"
+valid_path = "./DATA/valid_data_processed"
+test_path = "./DATA/test_data_processed"
+items_db_path = "./DATA/movie_db"
 
 torch.save(train_converted_data, train_path)
 torch.save(valid_converted_data, valid_path)
