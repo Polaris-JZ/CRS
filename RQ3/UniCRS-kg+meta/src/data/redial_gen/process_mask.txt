@@ -1,0 +1,18 @@
+0it [00:00, ?it/s]18it [00:00, 179.87it/s]348it [00:00, 2010.45it/s]678it [00:00, 2597.48it/s]1000it [00:00, 2500.51it/s]
+0it [00:00, ?it/s]134it [00:00, 1338.04it/s]483it [00:00, 2600.52it/s]868it [00:00, 3167.87it/s]1185it [00:00, 3136.68it/s]1342it [00:00, 2984.26it/s]
+0it [00:00, ?it/s]88it [00:00, 878.98it/s]417it [00:00, 2295.37it/s]738it [00:00, 2711.47it/s]1067it [00:00, 2938.73it/s]1398it [00:00, 3070.30it/s]1722it [00:00, 3125.99it/s]2055it [00:00, 3191.16it/s]2388it [00:00, 3232.13it/s]2727it [00:00, 3278.95it/s]3055it [00:01, 3257.13it/s]3382it [00:01, 3258.88it/s]3719it [00:01, 3291.25it/s]4049it [00:01, 3287.11it/s]4380it [00:01, 3292.28it/s]4717it [00:01, 3314.04it/s]5049it [00:01, 3299.56it/s]5379it [00:01, 3232.20it/s]5716it [00:01, 3270.41it/s]6044it [00:01, 3272.49it/s]6376it [00:02, 3284.57it/s]6705it [00:02, 3262.11it/s]7039it [00:02, 3284.36it/s]7370it [00:02, 3289.16it/s]7699it [00:02, 3288.31it/s]8032it [00:02, 3297.36it/s]8362it [00:02, 3288.37it/s]8692it [00:02, 3291.53it/s]9006it [00:02, 3199.80it/s]
+#movie: 5552
+
+JOB STATISTICS
+==============
+Job ID: 9738175
+Cluster: snellius
+User/Group: jzhao/jzhao
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:04
+CPU Efficiency: 1.31% of 00:05:06 core-walltime
+Job Wall-clock time: 00:00:17
+Memory Utilized: 2.22 MB
+Memory Efficiency: 0.00% of 120.00 GB
