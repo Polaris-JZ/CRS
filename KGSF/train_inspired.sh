@@ -1,1 +1,0 @@
-python run_crslab.py --config config/crs/kgsf/inspired.yaml --gpu 1 > train_inspired.log 2>&1 &

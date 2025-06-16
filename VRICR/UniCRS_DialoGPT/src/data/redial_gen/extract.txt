@@ -1,24 +1,0 @@
-0it [00:00, ?it/s]1it [00:00,  8.43it/s]1326it [00:00, 7242.16it/s]1342it [00:00, 6103.68it/s]
-0it [00:00, ?it/s]773it [00:00, 7726.30it/s]1000it [00:00, 8448.01it/s]
-# all entity: 6281
-extract subkg
-0it [00:00, ?it/s]739it [00:00, 7384.92it/s]2019it [00:00, 10569.02it/s]3312it [00:00, 11644.96it/s]4615it [00:00, 12188.35it/s]5879it [00:00, 12349.88it/s]7157it [00:00, 12495.79it/s]8451it [00:00, 12639.14it/s]9006it [00:00, 12077.28it/s]
-  0%|          | 0/6281 [00:00<?, ?it/s]100%|██████████| 6281/6281 [00:00<00:00, 91380.73it/s]
-  0%|          | 0/23935 [00:00<?, ?it/s] 85%|████████▍ | 20246/23935 [00:00<00:00, 202444.75it/s]100%|██████████| 23935/23935 [00:00<00:00, 203788.85it/s]
-  0%|          | 0/24136 [00:00<?, ?it/s]100%|██████████| 24136/24136 [00:00<00:00, 327704.18it/s]
-# entity: 31161
-# relation: 25
-
-JOB STATISTICS
-==============
-Job ID: 9724579
-Cluster: snellius
-User/Group: jzhao/jzhao
-State: COMPLETED (exit code 0)
-Nodes: 1
-Cores per node: 18
-CPU Utilized: 00:00:29
-CPU Efficiency: 4.03% of 00:12:00 core-walltime
-Job Wall-clock time: 00:00:40
-Memory Utilized: 10.36 MB
-Memory Efficiency: 0.01% of 120.00 GB

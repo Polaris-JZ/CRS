@@ -1,20 +1,17 @@
-# UniMIND
+# A Unified Multi-task Learning Framework for Multi-goal Conversational Recommender Systems
+The source code for the TOIS 2023 Paper [**"A Unified Multi-task Learning Framework for Multi-goal Conversational Recommender Systems"**](https://dl.acm.org/doi/10.1145/3570640)
 
-A Unified Multi-task Learning Framework for Multi-goal Conversational Recommender Systems. 
-
-## Dataset
-
-The TG-ReDial and DuRecDial datasets have been processed to be applied for evaluating multi-goal conversational recommender systems. 
-
-Please cite the following paper if you use it in any way：
-    
-*	Yang Deng, Wenxuan Zhang, Weiwen Xu, Wenqiang Lei, Tat-Seng Chua, Wai Lam. A Unified Multi-task Learning Framework for Multi-goal Conversational Recommender Systems. 
-    	
-Also, please cite the original dataset papers following if you use the data:
-
-*	Kun Zhou, Yuanhang Zhou, Wayne Xin Zhao, Xiaoke Wang, Ji-Rong Wen. Towards Topic-Guided Conversational Recommender System. In COLING 2020.
-* Zeming Liu, Haifeng Wang, Zheng-Yu Niu, Hua Wu, Wanxiang Che, Ting Liu. Towards Conversational Recommendation over Multi-Type Dialogs. In ACL 2020.
+Compared with the original source code, we inject item meta and review information into the model.
 
 
-## Training and Inference
-`python train.py --do_train --do_finetune --do_pipeline --beam_size=1 --warmup_steps=400 --max_seq_length=512 --max_target_length=100 --gpu=<your_gpu_id> --overwrite_output_dir --per_gpu_train_batch_size=<your_batch_size> --per_gpu_eval_batch_size=<your_batch_size> --model_name_or_path="fnlp/bart-base-chinese" --data_name=<tgredial or durecdial>`
+## Running unimind-n
+```bash
+cd unimind-n_add_val_stop
+sbatch train.sh
+```
+
+## Running unimind-s
+```bash
+cd unimind-s_add_val_stop
+sbatch train.sh
+```

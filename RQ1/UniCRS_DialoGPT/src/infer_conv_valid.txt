@@ -1,0 +1,415 @@
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2025-02-08 04:39:03.491 | INFO     | __main__:<module>:87 - Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+
+Mixed precision type: fp16
+
+2025-02-08 04:39:03.491 | INFO     | __main__:<module>:88 - {'seed': 42, 'output_dir': None, 'debug': False, 'dataset': 'redial', 'split': 'valid', 'num_workers': 0, 'context_max_length': 200, 'resp_max_length': 183, 'entity_max_length': 32, 'prompt_max_length': 200, 'tokenizer': 'microsoft/DialoGPT-small', 'ignore_pad_token_for_loss': False, 'text_tokenizer': 'roberta-base', 'model': 'microsoft/DialoGPT-small', 'max_gen_len': 50, 'text_encoder': 'roberta-base', 'prompt_encoder': '/projects/prjs1158/KG/redail/UniCRS/output/best', 'n_prefix_conv': 20, 'num_bases': 8, 'num_train_epochs': 10, 'max_train_steps': None, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 64, 'gradient_accumulation_steps': 1, 'learning_rate': 1e-05, 'weight_decay': 0.01, 'max_grad_norm': None, 'num_warmup_steps': 10000, 'fp16': False, 'use_wandb': False, 'entity': None, 'project': None, 'name': None, 'log_all': False}
+loading file vocab.json from cache at /home/jzhao/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/vocab.json
+loading file merges.txt from cache at /home/jzhao/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/merges.txt
+loading file tokenizer.json from cache at None
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/jzhao/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/tokenizer_config.json
+loading configuration file config.json from cache at /home/jzhao/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/config.json
+Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "conversational": {
+      "max_length": 1000
+    }
+  },
+  "transformers_version": "4.44.2",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+loading weights file model.safetensors from cache at /home/jzhao/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/model.safetensors
+Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256
+}
+
+All model checkpoint weights were used when initializing PromptGPT2forCRS.
+
+All the weights of PromptGPT2forCRS were initialized from the model checkpoint at microsoft/DialoGPT-small.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use PromptGPT2forCRS for predictions without further training.
+loading configuration file generation_config.json from cache at /home/jzhao/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/generation_config.json
+Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256
+}
+
+You are resizing the embedding layer without providing a `pad_to_multiple_of` parameter. This means that the new embedding dimension will be 50259. This might induce some performance reduction as *Tensor Cores* will not be available. For more details about this, or help on choosing the correct value for resizing, refer to this guide: https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#requirements-tc
+loading configuration file config.json from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.44.2",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading file vocab.json from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/vocab.json
+loading file merges.txt from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/merges.txt
+loading file tokenizer.json from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer_config.json
+loading configuration file config.json from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.44.2",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+/home/jzhao/miniconda3/envs/torch2.1.1/lib/python3.8/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+loading configuration file config.json from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.44.2",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading weights file model.safetensors from cache at /home/jzhao/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/model.safetensors
+Some weights of the model checkpoint at roberta-base were not used when initializing RobertaModel: ['lm_head.bias', 'lm_head.dense.bias', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.layer_norm.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at roberta-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+You are resizing the embedding layer without providing a `pad_to_multiple_of` parameter. This means that the new embedding dimension will be 50266. This might induce some performance reduction as *Tensor Cores* will not be available. For more details about this, or help on choosing the correct value for resizing, refer to this guide: https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#requirements-tc
+['edge_index', 'edge_type', 'conv_prefix_embeds', 'conv_prefix_proj.0.weight', 'conv_prefix_proj.0.bias', 'conv_prefix_proj.2.weight', 'conv_prefix_proj.2.bias'] []
+
+  0%|          | 0/6253 [00:00<?, ?it/s]/home/jzhao/miniconda3/envs/torch2.1.1/lib/python3.8/site-packages/transformers/tokenization_utils_base.py:4126: UserWarning: `as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your labels by using the argument `text_target` of the regular `__call__` method (either in the same call as your input texts if you use the same keyword arguments, or in a separate call.
+  warnings.warn(
+
+  2%|▏         | 129/6253 [00:00<00:04, 1285.76it/s]
+  4%|▍         | 266/6253 [00:00<00:04, 1325.94it/s]
+  7%|▋         | 408/6253 [00:00<00:04, 1366.76it/s]
+  9%|▊         | 545/6253 [00:00<00:04, 1353.09it/s]
+ 11%|█         | 681/6253 [00:00<00:04, 1324.63it/s]
+ 13%|█▎        | 822/6253 [00:00<00:04, 1350.67it/s]
+ 16%|█▌        | 977/6253 [00:00<00:03, 1412.92it/s]
+ 18%|█▊        | 1119/6253 [00:00<00:03, 1409.33it/s]
+ 20%|██        | 1261/6253 [00:00<00:03, 1388.46it/s]
+ 22%|██▏       | 1406/6253 [00:01<00:03, 1406.58it/s]
+ 25%|██▍       | 1548/6253 [00:01<00:03, 1409.12it/s]
+ 27%|██▋       | 1689/6253 [00:01<00:03, 1352.92it/s]
+ 29%|██▉       | 1827/6253 [00:01<00:03, 1355.25it/s]
+ 31%|███▏      | 1963/6253 [00:01<00:03, 1343.82it/s]
+ 34%|███▍      | 2117/6253 [00:01<00:02, 1398.48it/s]
+ 36%|███▌      | 2258/6253 [00:01<00:03, 1329.04it/s]
+ 38%|███▊      | 2392/6253 [00:01<00:03, 1283.00it/s]
+ 41%|████      | 2537/6253 [00:01<00:02, 1329.98it/s]
+ 43%|████▎     | 2685/6253 [00:01<00:02, 1371.03it/s]
+ 45%|████▌     | 2829/6253 [00:02<00:02, 1390.61it/s]
+ 47%|████▋     | 2969/6253 [00:02<00:02, 1347.23it/s]
+ 50%|████▉     | 3112/6253 [00:02<00:02, 1368.82it/s]
+ 52%|█████▏    | 3256/6253 [00:02<00:02, 1387.46it/s]Token indices sequence length is longer than the specified maximum sequence length for this model (584 > 512). Running this sequence through the model will result in indexing errors
+
+ 54%|█████▍    | 3396/6253 [00:02<00:02, 1374.25it/s]
+ 57%|█████▋    | 3536/6253 [00:02<00:01, 1380.77it/s]
+ 59%|█████▉    | 3678/6253 [00:02<00:01, 1389.53it/s]
+ 61%|██████    | 3818/6253 [00:02<00:01, 1362.74it/s]
+ 63%|██████▎   | 3960/6253 [00:02<00:01, 1373.71it/s]
+ 66%|██████▌   | 4098/6253 [00:03<00:01, 1338.34it/s]
+ 68%|██████▊   | 4239/6253 [00:03<00:01, 1358.96it/s]
+ 70%|███████   | 4383/6253 [00:03<00:01, 1382.24it/s]
+ 72%|███████▏  | 4525/6253 [00:03<00:01, 1391.08it/s]
+ 75%|███████▍  | 4665/6253 [00:03<00:01, 1345.07it/s]
+ 77%|███████▋  | 4811/6253 [00:03<00:01, 1376.72it/s]
+ 79%|███████▉  | 4950/6253 [00:03<00:01, 1292.19it/s]
+ 81%|████████▏ | 5091/6253 [00:03<00:00, 1324.43it/s]
+ 84%|████████▎ | 5228/6253 [00:03<00:00, 1337.44it/s]
+ 86%|████████▌ | 5372/6253 [00:03<00:00, 1366.36it/s]
+ 88%|████████▊ | 5510/6253 [00:04<00:00, 1359.28it/s]
+ 90%|█████████ | 5650/6253 [00:04<00:00, 1369.66it/s]
+ 93%|█████████▎| 5788/6253 [00:04<00:00, 1356.54it/s]
+ 95%|█████████▍| 5927/6253 [00:04<00:00, 1365.43it/s]
+ 97%|█████████▋| 6064/6253 [00:04<00:00, 1344.27it/s]
+ 99%|█████████▉| 6199/6253 [00:04<00:00, 1328.35it/s]
+100%|██████████| 6253/6253 [00:04<00:00, 1360.75it/s]
+/home/jzhao/miniconda3/envs/torch2.1.1/lib/python3.8/site-packages/accelerate/accelerator.py:516: FutureWarning: The `use_fp16` property is deprecated and will be removed in version 1.0 of Accelerate use `Accelerator.mixed_precision == 'fp16'` instead.
+  warnings.warn(
+
+  0%|          | 0/89 [00:00<?, ?it/s]You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/jzhao/miniconda3/envs/torch2.1.1/lib/python3.8/site-packages/transformers/tokenization_utils_base.py:2888: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+You're using a RobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  1%|          | 1/89 [00:16<24:02, 16.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  2%|▏         | 2/89 [00:31<22:53, 15.79s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  3%|▎         | 3/89 [00:47<22:26, 15.65s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  4%|▍         | 4/89 [01:02<22:01, 15.54s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  6%|▌         | 5/89 [01:17<21:40, 15.48s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  7%|▋         | 6/89 [01:33<21:20, 15.43s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  8%|▊         | 7/89 [01:48<21:03, 15.41s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+  9%|▉         | 8/89 [02:04<20:49, 15.43s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 10%|█         | 9/89 [02:19<20:34, 15.43s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 11%|█         | 10/89 [02:34<20:17, 15.41s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 12%|█▏        | 11/89 [02:50<20:00, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 13%|█▎        | 12/89 [03:05<19:42, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 15%|█▍        | 13/89 [03:20<19:27, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 16%|█▌        | 14/89 [03:36<19:11, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 17%|█▋        | 15/89 [03:51<18:58, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 18%|█▊        | 16/89 [04:07<18:42, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 19%|█▉        | 17/89 [04:22<18:26, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 20%|██        | 18/89 [04:37<18:12, 15.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 21%|██▏       | 19/89 [04:53<17:56, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 22%|██▏       | 20/89 [05:08<17:40, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 24%|██▎       | 21/89 [05:23<17:24, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 25%|██▍       | 22/89 [05:39<17:11, 15.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 26%|██▌       | 23/89 [05:54<16:54, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 27%|██▋       | 24/89 [06:10<16:40, 15.40s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 28%|██▊       | 25/89 [06:25<16:23, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 29%|██▉       | 26/89 [06:40<16:08, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 30%|███       | 27/89 [06:56<15:52, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 31%|███▏      | 28/89 [07:11<15:38, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 33%|███▎      | 29/89 [07:26<15:22, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 34%|███▎      | 30/89 [07:42<15:06, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 35%|███▍      | 31/89 [07:57<14:50, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 36%|███▌      | 32/89 [08:13<14:36, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 37%|███▋      | 33/89 [08:28<14:20, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 38%|███▊      | 34/89 [08:43<14:04, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 39%|███▉      | 35/89 [08:59<13:50, 15.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 40%|████      | 36/89 [09:14<13:34, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 42%|████▏     | 37/89 [09:29<13:18, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 43%|████▎     | 38/89 [09:45<13:02, 15.34s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 44%|████▍     | 39/89 [10:00<12:47, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 45%|████▍     | 40/89 [10:15<12:33, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 46%|████▌     | 41/89 [10:31<12:17, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 47%|████▋     | 42/89 [10:46<12:01, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 48%|████▊     | 43/89 [11:01<11:46, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 49%|████▉     | 44/89 [11:17<11:32, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 51%|█████     | 45/89 [11:32<11:16, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 52%|█████▏    | 46/89 [11:48<11:00, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 53%|█████▎    | 47/89 [12:03<10:44, 15.34s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 54%|█████▍    | 48/89 [12:18<10:30, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 55%|█████▌    | 49/89 [12:34<10:14, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 56%|█████▌    | 50/89 [12:49<09:58, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 57%|█████▋    | 51/89 [13:04<09:44, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 58%|█████▊    | 52/89 [13:20<09:28, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 60%|█████▉    | 53/89 [13:35<09:12, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 61%|██████    | 54/89 [13:50<08:57, 15.34s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 62%|██████▏   | 55/89 [14:06<08:43, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 63%|██████▎   | 56/89 [14:21<08:27, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 64%|██████▍   | 57/89 [14:37<08:11, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 65%|██████▌   | 58/89 [14:52<07:56, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 66%|██████▋   | 59/89 [15:07<07:41, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 67%|██████▋   | 60/89 [15:23<07:25, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 69%|██████▊   | 61/89 [15:38<07:09, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 70%|██████▉   | 62/89 [15:53<06:54, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 71%|███████   | 63/89 [16:09<06:40, 15.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 72%|███████▏  | 64/89 [16:24<06:24, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 73%|███████▎  | 65/89 [16:40<06:08, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 74%|███████▍  | 66/89 [16:55<05:52, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 75%|███████▌  | 67/89 [17:10<05:38, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 76%|███████▋  | 68/89 [17:25<05:21, 15.32s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 78%|███████▊  | 69/89 [17:41<05:07, 15.36s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 79%|███████▊  | 70/89 [17:56<04:52, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 80%|███████▉  | 71/89 [18:12<04:36, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 81%|████████  | 72/89 [18:27<04:20, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 82%|████████▏ | 73/89 [18:42<04:05, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 83%|████████▎ | 74/89 [18:58<03:50, 15.34s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 84%|████████▍ | 75/89 [19:13<03:34, 15.34s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 85%|████████▌ | 76/89 [19:28<03:19, 15.33s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 87%|████████▋ | 77/89 [19:44<03:04, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 88%|████████▊ | 78/89 [19:59<02:48, 15.35s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 89%|████████▉ | 79/89 [20:14<02:33, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 90%|████████▉ | 80/89 [20:30<02:18, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 91%|█████████ | 81/89 [20:45<02:03, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 92%|█████████▏| 82/89 [21:01<01:47, 15.37s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 93%|█████████▎| 83/89 [21:16<01:32, 15.41s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 94%|█████████▍| 84/89 [21:31<01:16, 15.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 96%|█████████▌| 85/89 [21:47<01:01, 15.39s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 97%|█████████▋| 86/89 [22:02<00:46, 15.38s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 98%|█████████▊| 87/89 [22:18<00:30, 15.41s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+ 99%|█████████▉| 88/89 [22:33<00:15, 15.41s/it]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+
+100%|██████████| 89/89 [22:37<00:00, 11.92s/it]
+100%|██████████| 89/89 [22:37<00:00, 15.25s/it]
+2025-02-08 05:01:50.931 | INFO     | __main__:<module>:197 - {'valid/bleu@1': 0.003914015096599646, 'valid/bleu@2': 0.0013431636912844562, 'valid/bleu@3': 0.0010349824029593523, 'valid/bleu@4': 0.0008960742501907346, 'valid/intra_dist@1': 0.9443299366821537, 'valid/intra_dist@2': 0.9773367470011941, 'valid/intra_dist@3': 0.9958966716644853, 'valid/intra_dist@4': 0.9988935345897673, 'valid/inter_dist@1': 0.7789473684210526, 'valid/inter_dist@2': 0.925, 'valid/inter_dist@3': 0.9384615384615385, 'valid/inter_dist@4': 0.9433962264150944, 'valid/item_ratio': 9719, 'valid/rouge1': 0.00847533430846331, 'valid/rouge2': 1.0416774485396034e-05, 'valid/rougeL': 0.008465496243020499, 'valid/sent_cnt': 5647}
+

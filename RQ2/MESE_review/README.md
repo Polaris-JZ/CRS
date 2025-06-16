@@ -1,6 +1,10 @@
-# MESE
+# Improving Conversational Recommendation Systems Quality with Context-Aware Item Meta Information
+The source code for the NAACL Findings 2022 Paper [**"Improving Conversational Recommendation Systems Quality with Context-Aware Item Meta Information"**](https://arxiv.org/abs/2112.08140)
 
-This is the code for Improving Conversational Recommendation Systems' Quality with Context-Aware Item Meta Information
-https://arxiv.org/abs/2112.08140
+Compared with the original source code, we inject review information into the model.
 
-MESE_Train.py is the main file.
+
+## Running
+```bash
+sbatch train.sh
+```
