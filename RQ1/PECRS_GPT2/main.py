@@ -127,6 +127,11 @@ parser.add_argument("--token2id_path", type=str, default="data/REDIAL/nltk/token
 parser.add_argument("--early_stop", type=bool, default=True)
 parser.add_argument("--early_stop_patience", type=int, default=4)
 
+# new parameters
+parser.add_argument("--alpha", type=float, default=0.15, help="loss weight for recall")
+parser.add_argument("--beta", type=float, default=0.8, help="loss weight for rerank")
+parser.add_argument("--gamma", type=float, default=1.0, help="loss weight for generation")
+
 args = parser.parse_args()
 
 dataset_names = ["REDIAL", "INSPIRED"]

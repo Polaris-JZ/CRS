@@ -93,6 +93,11 @@ class TrainOption:
     tau_setp =  30000
     self_attention = False
 
+    alpha = 0.9
+
+    beta = 1.0
+    gamma = 1.0
+    lambda_3 = 0.01
 
     @staticmethod
     def update_device(device,device_id):

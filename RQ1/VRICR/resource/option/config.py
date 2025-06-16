@@ -78,6 +78,9 @@ def config():
     parser.add_argument("--mlp_fusion",action="store_true",default=False)
     parser.add_argument("--rec_fusion",action="store_true",default=False)
     parser.add_argument("--tgt_bert",action="store_true",default=True)
+    parser.add_argument("--alpha", type=float, default=0.9, help="recommendation fusion alpha")
+    parser.add_argument("--beta", type=float, default=1.0, help="recommendation loss beta")
+    parser.add_argument("--gamma", type=float, default=1.0, help="recommendation loss gamma")
 
     args = parser.parse_args()
 
@@ -109,8 +112,10 @@ def config():
     TrainOption.update("mlp_fusion",args.mlp_fusion)
     TrainOption.update("rec_fusion",args.rec_fusion)
     TrainOption.update("tgt_bert",args.tgt_bert)
-
-
+    TrainOption.update("alpha", args.alpha)
+    TrainOption.update("beta", args.beta)
+    TrainOption.update("gamma", args.gamma)
+    TrainOption.update("lambda_3", args.lambda_3)
 
     TrainOption.update("lambda_0", args.lambda_0)
     TrainOption.update("lambda_1", args.lambda_1)

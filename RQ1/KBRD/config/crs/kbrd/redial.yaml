@@ -10,7 +10,7 @@ model: KBRD
 token_emb_dim: 300
 kg_emb_dim: 128
 num_bases: 8
-n_heads: 2
+n_heads: 4
 n_layers: 2
 ffn_size: 300
 dropout: 0.1

@@ -34,6 +34,7 @@ class rec_model(BaseModel):
         self.kg_emb_dim = kg_emb_dim
         self.d_model = d_model
         self.d_inner = d_inner
+        self.alpha = TO.alpha
 
         self._build_graph_encoder_layer()
         self._build_relation_infer_layer()
@@ -189,7 +190,7 @@ class rec_model(BaseModel):
             copy_topic_prob = copy_topic_temp.scatter_add(dim=1,
                                                           index=ed_idx,
                                                           src=ed_prob)
-            rec_scores = 0.9 * rec_scores + 0.1 * copy_topic_prob
+            rec_scores = self.alpha * rec_scores + (1 - self.alpha) * copy_topic_prob
 
         return rec_scores
 

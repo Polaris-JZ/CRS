@@ -17,4 +17,8 @@ srun --gres=gpu:1 \
     --dataset Redial \
     --task recommend \
     --pretrain \
-    --efficient_train_batch_size 256
+    --efficient_train_batch_size 256 \
+    --alpha 0.9 \
+    --beta 0.8 \
+    --gamma 10 \
+    --lambda_3 0.0055

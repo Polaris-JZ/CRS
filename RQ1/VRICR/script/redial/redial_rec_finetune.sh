@@ -16,4 +16,8 @@ srun --gres=gpu:1 \
 		--dataset Redial \
 		--task recommend  \
 		--ckpt /projects/prjs1158/KG/redail/VRICR_update/data/ckpt/Redial/recommend/120c455a/13650.model.ckpt   \
-		--data_processed
+		--data_processed \
+		--alpha 0.9 \
+		--beta 0.8 \
+		--gamma 10 \
+		--lambda_3 0.0055

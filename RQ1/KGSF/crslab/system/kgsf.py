@@ -44,6 +44,7 @@ class KGSFSystem(BaseSystem):
         self.ind2tok = vocab['ind2tok']
         self.end_token_idx = vocab['end']
         self.item_ids = side_data['item_entity_ids']
+        self.info_loss_weight = self.opt['info_loss_weight']
 
         self.pretrain_optim_opt = self.opt['pretrain']
         self.rec_optim_opt = self.opt['rec']
@@ -84,7 +85,7 @@ class KGSFSystem(BaseSystem):
         elif stage == 'rec':
             rec_loss, info_loss, rec_predict = self.model.forward(batch, stage, mode)
             if info_loss:
-                loss = rec_loss + 0.025 * info_loss
+                loss = rec_loss + self.info_loss_weight * info_loss
             else:
                 loss = rec_loss
             if mode == "train":

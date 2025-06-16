@@ -11,4 +11,7 @@ source ~/.bashrc
 conda activate torch2.1.1
 
 srun --gres=gpu:1 \
-    python main.py --train_bs 128 --eval_bs 128
+    python main.py --train_bs 128 --eval_bs 128 \
+    --alpha 0.2 \
+    --beta 0.8 \
+    --gamma 1.0
